@@ -38,4 +38,14 @@ const containers = [{
 function addIceCream(name) {
     const cream = iceCream.find(c => c.name == name)
     console.log(cream.name)
+
+    drawCart()
+}
+
+function drawCart() {
+    let total = 0
+    let template = ''
+    document.getElementById('items').innerText = cream.name
+
+
 }

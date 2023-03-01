@@ -9,3 +9,8 @@
 .card:hover {
     transform: scale(1.03);
 }
+
+.imgLook {
+    min-height: 20vh;
+    width: autos;
+}
