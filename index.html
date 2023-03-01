@@ -32,14 +32,19 @@
 </head>
 
 <body class="debug">
+
+
     <main class="container bg-color">
         <section class="row">
-            <div class="col-6">
-                <section class="row">
-                    <div class="col-12 bg-light rounded shadow">
-                        <p>hello</p>
+            <section class="col-6">
+
+                <div class="row bg-light rounded shadow">
+                    <div class="col-12" id="items">
+
                     </div>
-                </section>
+                </div>
+            </section>
+
 
             </div>
 
@@ -48,19 +53,19 @@
                     <div class="col-12 d-flex justify-content-around align-items-center">
                         <div class="card shadow">
                             <img src="https://images.pexels.com/photos/2586924/pexels-photo-2586924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="CookieDough">
+                                alt="CookieDough" onclick="addIceCream('Cookie Dough')">
                             <p>Cookie Dough $1</p>
                         </div>
 
                         <div class="card shadow">
                             <img src="https://images.pexels.com/photos/1979749/pexels-photo-1979749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Vanilla">
+                                alt="Vanilla" onclick="addIceCream('Vanilla')">
                             <p>Vanilla $1</p>
                         </div>
 
                         <div class="card shadow">
                             <img src="https://images.pexels.com/photos/2161649/pexels-photo-2161649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Strawberry">
+                                alt="Strawberry" onclick="addIceCream('Strawberry')">
                             <p>Strawberry $2</p>
                         </div>
                     </div>

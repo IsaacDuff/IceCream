@@ -1,3 +1,11 @@
 .bg-color {
     background-color: #fff3c8;
 }
+
+.card {
+    transition: all .2s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}

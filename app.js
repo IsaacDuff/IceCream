@@ -34,3 +34,8 @@ const containers = [{
     price: 4
 }]
 
+
+function addIceCream(name) {
+    const cream = iceCream.find(c => c.name == name)
+    console.log(cream.name)
+}
