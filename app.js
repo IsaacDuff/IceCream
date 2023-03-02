@@ -3,7 +3,8 @@ console.log('connected?')
 const iceCream = [{
     name: 'Cookie Dough',
     image: 'https://celebratingsweets.com/wp-content/uploads/2014/04/Cookie-Dough-Ice-Cream-1-5.jpg',
-    price: 1
+    price: 1,
+    quantity: 0
 }, {
     name: 'Vanilla',
     image: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ultimate-vanilla-ice-cream-1628511695.jpg',
@@ -36,8 +37,12 @@ const containers = [{
 
 
 function addIceCream(name) {
-    const cream = iceCream.find(c => c.name == name)
-    console.log(cream.name)
+    const ice = iceCream.find(c => c.name == name)
+
+    ice.quantity++
+
+    console.log(ice)
+
 
     drawCart()
 }
@@ -45,7 +50,23 @@ function addIceCream(name) {
 function drawCart() {
     let total = 0
     let template = ''
-    document.getElementById('items').innerText = cream.name
+    iceCream.forEach(c => {
+        if (c.quantity) {
+            template += `
+    <div class="col-3">
+    <h3>${c.name}</h3>
+</div>
+<div class="col-3">
+    <h3>${c.quantity}</h3>
+</div>
+<div class="col-3">
+    <h3>${c.price}</h3>
+</div>
+<div class="col-3">
+    <h3>Total</h3>
+</div>`}
+    })
+    document.getElementById('items').innerHTML = template
 
 
 }
