@@ -116,7 +116,7 @@ function drawCartTop() {
     <h3>${total}</h3>
 </div>`}
     })
-    document.getElementById('items').innerHTML = template
+    document.getElementById('toppings').innerHTML = template
 
 
 }
@@ -155,7 +155,7 @@ function drawCartCon() {
     <h3>${total}</h3>
 </div>`}
     })
-    document.getElementById('items').innerHTML = template
+    document.getElementById('containers').innerHTML = template
 
 
 }
