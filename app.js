@@ -42,6 +42,9 @@ const containers = [{
 }]
 
 
+
+//NOTE - icecream
+
 function addIceCream(name) {
     const ice = iceCream.find(c => c.name == name)
 
@@ -56,6 +59,7 @@ function addIceCream(name) {
 function drawCart() {
     let total = 0
     let template = ''
+    iceCream.forEach(c => { total += c.price * c.quantity })
     iceCream.forEach(c => {
         if (c.quantity) {
             template += `
@@ -69,13 +73,17 @@ function drawCart() {
     <h3>$${c.price}</h3>
 </div>
 <div class="col-3">
-    <h3>Total</h3>
+    <h3>${total}</h3>
 </div>`}
     })
     document.getElementById('items').innerHTML = template
 
 
 }
+
+
+
+//NOTE - toppings
 
 function addTopping(name) {
     const top = toppings.find(t => t.name == name)
@@ -91,6 +99,7 @@ function addTopping(name) {
 function drawCartTop() {
     let total = 0
     let template = ''
+    toppings.forEach(t => { total += t.price * t.quantity })
     toppings.forEach(t => {
         if (t.quantity) {
             template += `
@@ -104,13 +113,16 @@ function drawCartTop() {
     <h3>$${t.price}</h3>
 </div>
 <div class="col-3">
-    <h3>Total</h3>
+    <h3>${total}</h3>
 </div>`}
     })
     document.getElementById('items').innerHTML = template
 
 
 }
+
+
+//NOTE - container
 
 function addContainer(name) {
     const con = containers.find(c => c.name == name)
@@ -126,6 +138,7 @@ function addContainer(name) {
 function drawCartCon() {
     let total = 0
     let template = ''
+    containers.forEach(c => { total += c.price * c.quantity })
     containers.forEach(c => {
         if (c.quantity) {
             template += `
@@ -139,10 +152,34 @@ function drawCartCon() {
     <h3>$${c.price}</h3>
 </div>
 <div class="col-3">
-    <h3>Total</h3>
+    <h3>${total}</h3>
 </div>`}
     })
     document.getElementById('items').innerHTML = template
 
 
+}
+
+
+//NOTE - Checkout
+
+function checkout() {
+    console.log("Paid in Full")
+    iceCream.forEach(c => c.quantity = 0)
+
+    drawCart()
+}
+
+function checkouttop() {
+    toppings.forEach(t => t.quantity = 0)
+
+    drawCartTop()
+
+}
+
+function checkoutcon() {
+    containers.forEach(c => c.quantity = 0)
+
+
+    drawCartCon()
 }
